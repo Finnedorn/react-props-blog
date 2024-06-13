@@ -1,5 +1,6 @@
 import CardComponent from "../Card/CardComponent";
 import posts from "../../data/posts";
+import { getClassForTag } from "../../utils/getClass";
 
 const MainComponent = () => {
   const tagsArr = [];
@@ -11,6 +12,7 @@ const MainComponent = () => {
       }
     });
   })
+
 
   return (
     <main
@@ -48,7 +50,7 @@ const MainComponent = () => {
         <h2 className="text-light">Tags</h2>
         <div className="d-flex justify-content-center">
           {tagsArr.map((tag) => (
-            <span key={`tag-${tagsArr.length}`} className="badge text-bg-primary fs-5 mx-2">
+            <span key={`tag-${tagsArr.length}`} className={getClassForTag(tag) + " badge fs-5 mx-2 text-light"}>
               {tag}
             </span>
           ))}

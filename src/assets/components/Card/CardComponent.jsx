@@ -1,4 +1,5 @@
 import c from "../Card/Card.module.css";
+import { getClassForTag } from "../../utils/getClass";
 
 const CardComponent = ({title, image, content, tags}) => {
   return (
@@ -19,7 +20,7 @@ const CardComponent = ({title, image, content, tags}) => {
                 </p>
                 <div>
                     {tags.map((tag, index) => (
-                        <span key={index} className="badge text-bg-primary fs-5 mx-2">
+                        <span key={index} className={getClassForTag(tag) + " badge fs-5 mx-2 text-light"}>
                             {tag}
                         </span>
                     ))}
