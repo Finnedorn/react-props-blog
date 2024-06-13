@@ -1,0 +1,9 @@
+.mainWrapper {
+    background-color: darkgray;
+    height: calc(100vh - 79px);
+}
+
+.cardWrapper {
+    display: flex;
+    justify-content: center;
+}
