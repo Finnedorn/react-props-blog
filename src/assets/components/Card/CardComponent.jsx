@@ -1,26 +1,29 @@
-import cardStyle from "../Card/Card.module.css";
-import img from "../../img/pokemon_day.jpg";
+import c from "../Card/Card.module.css";
 
-const CardComponent = () => {
+const CardComponent = ({title, image, content, tags}) => {
   return (
-    <div className={cardStyle.card}>
-        <div className={cardStyle.cardImg}>
-            <img src={img} alt="img-post" />
-        </div>
-        <div className={cardStyle.cardBody}>
-            <h2 className={cardStyle.cardTitle}>
-                Titolo del Post
-            </h2>
-            <p style={{
-                fontSize: "1.3rem",
-                padding: "10px 0px"
-            }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, quam? Laborum odit, dicta repellat maiores amet reiciendis in hic tenetur corrupti vitae. Quis provident temporibus optio nostrum earum praesentium soluta.
-            </p>
-            <div>
-                <a href="#" className={cardStyle.cardBtn}>
-                    Leggi di più
-                </a>
+    <div className={c.cardWrapper}>
+        <div className={c.card}>
+            <div className={c.cardImg}>
+                {image === '' && <img src="https://placehold.co/600x400" alt={`immagine di ${title}`}/>}
+            </div>
+            <div className={c.cardBody}>
+                <h2 className={c.cardTitle}>
+                    {title}
+                </h2>
+                <p style={{
+                    fontSize: "1.3rem",
+                    padding: "10px 0px"
+                }}>
+                    {content}
+                </p>
+                <div>
+                    {tags.map((tag, index) => (
+                        <span key={index} className="badge text-bg-primary fs-5 mx-2">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
             </div>
         </div>
     </div>

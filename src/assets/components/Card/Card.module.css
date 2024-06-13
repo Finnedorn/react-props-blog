@@ -1,10 +1,16 @@
+.cardWrapper{
+    padding: 20px;
+}
+
+
+
 .card {
     display: flex;
     flex-direction: column;
     background-color: #fff;
     border-radius: 0.5rem;
     overflow: hidden;
-    width: 600px;
+    max-width: 600px;    
 }
 
 .cardImg {
